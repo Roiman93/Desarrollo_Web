@@ -677,7 +677,8 @@ include '../model/conexion.php';
 
         $sql="SELECT e.s_id,CONCAT(e.first_name, ' ',e.last_name) as nombre, e.lv_id, e.group,ts.name,ts.credits FROM test_students e 
         INNER JOIN test_courses_x_student cs on  cs.s_id=e.s_id 
-        INNER JOIN test_courses ts on ts.c_id=cs.c_id ";
+        INNER JOIN test_courses ts on ts.c_id=cs.c_id 
+        ORDER by E.s_id";
 
         $query = mysqli_query($conexion,$sql);
         $result = mysqli_num_rows($query);
